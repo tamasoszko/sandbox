@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PassGen" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="4" maxValue="32" translatesAutoresizingMaskIntoConstraints="NO" id="sLD-hT-aZB">
+                                <rect key="frame" x="38" y="119" width="524" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="yRw-5M-L3j"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tph-ax-xCA">
+                                <rect key="frame" x="20" y="60" width="560" height="39"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="***" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZm-sM-eZr">
+                                <rect key="frame" x="277" y="189" width="46" height="39"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tph-ax-xCA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3f0-LY-v4X"/>
+                            <constraint firstItem="vZm-sM-eZr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fgn-VG-VXN"/>
+                            <constraint firstItem="vZm-sM-eZr" firstAttribute="top" secondItem="sLD-hT-aZB" secondAttribute="bottom" constant="40" id="Lof-u0-4h6"/>
+                            <constraint firstItem="sLD-hT-aZB" firstAttribute="top" secondItem="tph-ax-xCA" secondAttribute="bottom" constant="20" id="QNm-34-rGl"/>
+                            <constraint firstItem="tph-ax-xCA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="YyS-G8-Xbx"/>
+                            <constraint firstItem="vZm-sM-eZr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hVF-5h-HeO"/>
+                            <constraint firstItem="sLD-hT-aZB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="rjE-Wp-jV4"/>
+                            <constraint firstItem="tph-ax-xCA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w9u-xa-MMg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sLD-hT-aZB" secondAttribute="trailing" constant="20" id="zzh-nO-1ZG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Fgn-VG-VXN"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="lengthLabel" destination="tph-ax-xCA" id="mBT-sU-6RA"/>
+                        <outlet property="lengthSlider" destination="sLD-hT-aZB" id="6av-v4-k6i"/>
+                        <outlet property="passwordLabel" destination="vZm-sM-eZr" id="snV-KZ-zMJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="307" y="356"/>
+        </scene>
+    </scenes>
+</document>

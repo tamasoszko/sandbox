@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="ExchangeRates_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="27y-h6-ZmD">
+                                <rect key="frame" x="24" y="8" width="272" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBe-DE-1m1">
+                                        <rect key="frame" x="0.0" y="0.0" width="132" height="24"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8fa-MH-KA3">
+                                        <rect key="frame" x="140" y="0.0" width="132" height="25"/>
+                                        <animations/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="segmentedControlChanged:" destination="M4Y-Lb-cyx" eventType="valueChanged" id="lk7-YV-VT2"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="8fa-MH-KA3" firstAttribute="width" secondItem="XBe-DE-1m1" secondAttribute="width" id="LdF-J6-D5M"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2C-4u-9Ri" customClass="JBLineChartView">
+                                <rect key="frame" x="24" y="52" width="272" height="80"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="OFg-z8-iiE"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGr-Kv-Ufn">
+                                <rect key="frame" x="143" y="140" width="35" height="20"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hlA-te-B6H">
+                                <rect key="frame" x="115" y="140" width="20" height="20"/>
+                                <animations/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <animations/>
+                        <constraints>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="hlA-te-B6H" secondAttribute="bottom" id="0Js-x9-4OD"/>
+                            <constraint firstItem="W2C-4u-9Ri" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="8" id="0UG-Db-mW6"/>
+                            <constraint firstItem="27y-h6-ZmD" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" symbolic="YES" id="207-Qq-2ui"/>
+                            <constraint firstItem="27y-h6-ZmD" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="8" id="6YF-C5-bRS"/>
+                            <constraint firstItem="xGr-Kv-Ufn" firstAttribute="leading" secondItem="hlA-te-B6H" secondAttribute="trailing" constant="8" id="7OE-qQ-5Ua"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="xGr-Kv-Ufn" secondAttribute="bottom" id="87y-Wv-DvJ"/>
+                            <constraint firstItem="W2C-4u-9Ri" firstAttribute="top" secondItem="27y-h6-ZmD" secondAttribute="bottom" constant="20" id="9vN-6x-NyK"/>
+                            <constraint firstItem="xGr-Kv-Ufn" firstAttribute="top" secondItem="W2C-4u-9Ri" secondAttribute="bottom" constant="8" id="ND5-4e-kDc"/>
+                            <constraint firstItem="xGr-Kv-Ufn" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="Q35-DS-24q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="27y-h6-ZmD" secondAttribute="trailing" constant="8" id="bq6-7R-BOQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W2C-4u-9Ri" secondAttribute="trailing" constant="8" id="gNN-TX-r5e"/>
+                            <constraint firstItem="xGr-Kv-Ufn" firstAttribute="centerY" secondItem="hlA-te-B6H" secondAttribute="centerY" id="wkP-2T-6sJ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="160"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hlA-te-B6H" id="mY2-Qh-Ppi"/>
+                        <outlet property="chartView" destination="W2C-4u-9Ri" id="FSf-C4-th5"/>
+                        <outlet property="detailLabel" destination="xGr-Kv-Ufn" id="YSQ-tm-YSI"/>
+                        <outlet property="rateLabel" destination="XBe-DE-1m1" id="EZz-Ek-mFN"/>
+                        <outlet property="segmentedControl" destination="8fa-MH-KA3" id="pm5-cs-Bb4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149" y="237"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,19 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ExchangeRates' do
+
+end
+
+target 'ExchangeRatesTests' do
+
+end
+
+target 'ExchangeRatesUITests' do
+
+end
+
+target 'ExchangeRates Widget' do
+pod 'NSDate+TimeAgo'
+end
+

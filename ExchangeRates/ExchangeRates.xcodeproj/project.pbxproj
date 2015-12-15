@@ -1,0 +1,727 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9D7289A1C00708D00D7D6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D728991C00708D00D7D6AD /* AppDelegate.swift */; };
+		C9D7289C1C00708D00D7D6AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7289B1C00708D00D7D6AD /* ViewController.swift */; };
+		C9D7289F1C00708D00D7D6AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D7289D1C00708D00D7D6AD /* Main.storyboard */; };
+		C9D728A11C00708D00D7D6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D728A01C00708D00D7D6AD /* Assets.xcassets */; };
+		C9D728A41C00708D00D7D6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D728A21C00708D00D7D6AD /* LaunchScreen.storyboard */; };
+		C9D728AF1C00708D00D7D6AD /* ExchangeRatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D728AE1C00708D00D7D6AD /* ExchangeRatesTests.swift */; };
+		C9D728BA1C00708D00D7D6AD /* ExchangeRatesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D728B91C00708D00D7D6AD /* ExchangeRatesUITests.swift */; };
+		C9D728CF1C0070E300D7D6AD /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D728CA1C0070E300D7D6AD /* JBBarChartView.m */; };
+		C9D728D01C0070E300D7D6AD /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D728CC1C0070E300D7D6AD /* JBChartView.m */; };
+		C9D728D11C0070E300D7D6AD /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D728CE1C0070E300D7D6AD /* JBLineChartView.m */; };
+		C9D728D41C00781200D7D6AD /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D728D31C00781200D7D6AD /* Rates.swift */; };
+		C9D728DE1C00AF0D00D7D6AD /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D728DD1C00AF0D00D7D6AD /* NotificationCenter.framework */; };
+		C9D728E11C00AF0D00D7D6AD /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D728E01C00AF0D00D7D6AD /* TodayViewController.swift */; };
+		C9D728E41C00AF0D00D7D6AD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D728E21C00AF0D00D7D6AD /* MainInterface.storyboard */; };
+		C9D728E81C00AF0D00D7D6AD /* ExchangeRates Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C9D728DB1C00AF0D00D7D6AD /* ExchangeRates Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C9D728ED1C00B39A00D7D6AD /* JBBarChartView.h in Sources */ = {isa = PBXBuildFile; fileRef = C9D728C91C0070E300D7D6AD /* JBBarChartView.h */; };
+		C9D728EE1C00B39A00D7D6AD /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D728CA1C0070E300D7D6AD /* JBBarChartView.m */; };
+		C9D728EF1C00B39A00D7D6AD /* JBChartView.h in Sources */ = {isa = PBXBuildFile; fileRef = C9D728CB1C0070E300D7D6AD /* JBChartView.h */; };
+		C9D728F01C00B39A00D7D6AD /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D728CC1C0070E300D7D6AD /* JBChartView.m */; };
+		C9D728F11C00B39A00D7D6AD /* JBLineChartView.h in Sources */ = {isa = PBXBuildFile; fileRef = C9D728CD1C0070E300D7D6AD /* JBLineChartView.h */; };
+		C9D728F21C00B39B00D7D6AD /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D728CE1C0070E300D7D6AD /* JBLineChartView.m */; };
+		C9D728F31C00B39B00D7D6AD /* ExchangeRates-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = C9D728C81C0070E200D7D6AD /* ExchangeRates-Bridging-Header.h */; };
+		C9D728F41C00BFF100D7D6AD /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D728D31C00781200D7D6AD /* Rates.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9D728AB1C00708D00D7D6AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9D7288E1C00708D00D7D6AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9D728951C00708D00D7D6AD;
+			remoteInfo = ExchangeRates;
+		};
+		C9D728B61C00708D00D7D6AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9D7288E1C00708D00D7D6AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9D728951C00708D00D7D6AD;
+			remoteInfo = ExchangeRates;
+		};
+		C9D728E61C00AF0D00D7D6AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9D7288E1C00708D00D7D6AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9D728DA1C00AF0D00D7D6AD;
+			remoteInfo = "ExchangeRates Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C9D728EC1C00AF0D00D7D6AD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C9D728E81C00AF0D00D7D6AD /* ExchangeRates Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C9D728961C00708D00D7D6AD /* ExchangeRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D728991C00708D00D7D6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C9D7289B1C00708D00D7D6AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9D7289E1C00708D00D7D6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9D728A01C00708D00D7D6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9D728A31C00708D00D7D6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C9D728A51C00708D00D7D6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9D728AA1C00708D00D7D6AD /* ExchangeRatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeRatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D728AE1C00708D00D7D6AD /* ExchangeRatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesTests.swift; sourceTree = "<group>"; };
+		C9D728B01C00708D00D7D6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9D728B51C00708D00D7D6AD /* ExchangeRatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeRatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D728B91C00708D00D7D6AD /* ExchangeRatesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesUITests.swift; sourceTree = "<group>"; };
+		C9D728BB1C00708D00D7D6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9D728C81C0070E200D7D6AD /* ExchangeRates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExchangeRates-Bridging-Header.h"; sourceTree = "<group>"; };
+		C9D728C91C0070E300D7D6AD /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBBarChartView.h; path = ExchangeRates/JBBarChartView.h; sourceTree = "<group>"; };
+		C9D728CA1C0070E300D7D6AD /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBBarChartView.m; path = ExchangeRates/JBBarChartView.m; sourceTree = "<group>"; };
+		C9D728CB1C0070E300D7D6AD /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBChartView.h; path = ExchangeRates/JBChartView.h; sourceTree = "<group>"; };
+		C9D728CC1C0070E300D7D6AD /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBChartView.m; path = ExchangeRates/JBChartView.m; sourceTree = "<group>"; };
+		C9D728CD1C0070E300D7D6AD /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBLineChartView.h; path = ExchangeRates/JBLineChartView.h; sourceTree = "<group>"; };
+		C9D728CE1C0070E300D7D6AD /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBLineChartView.m; path = ExchangeRates/JBLineChartView.m; sourceTree = "<group>"; };
+		C9D728D31C00781200D7D6AD /* Rates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rates.swift; sourceTree = "<group>"; };
+		C9D728DB1C00AF0D00D7D6AD /* ExchangeRates Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ExchangeRates Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D728DD1C00AF0D00D7D6AD /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C9D728E01C00AF0D00D7D6AD /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C9D728E31C00AF0D00D7D6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C9D728E51C00AF0D00D7D6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9D728931C00708D00D7D6AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D728A71C00708D00D7D6AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D728B21C00708D00D7D6AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D728D81C00AF0D00D7D6AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9D728DE1C00AF0D00D7D6AD /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9D7288D1C00708D00D7D6AD = {
+			isa = PBXGroup;
+			children = (
+				C9D728C71C0070C800D7D6AD /* 3rd party */,
+				C9D728981C00708D00D7D6AD /* ExchangeRates */,
+				C9D728AD1C00708D00D7D6AD /* ExchangeRatesTests */,
+				C9D728B81C00708D00D7D6AD /* ExchangeRatesUITests */,
+				C9D728DF1C00AF0D00D7D6AD /* ExchangeRates Widget */,
+				C9D728DC1C00AF0D00D7D6AD /* Frameworks */,
+				C9D728971C00708D00D7D6AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9D728971C00708D00D7D6AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9D728961C00708D00D7D6AD /* ExchangeRates.app */,
+				C9D728AA1C00708D00D7D6AD /* ExchangeRatesTests.xctest */,
+				C9D728B51C00708D00D7D6AD /* ExchangeRatesUITests.xctest */,
+				C9D728DB1C00AF0D00D7D6AD /* ExchangeRates Widget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9D728981C00708D00D7D6AD /* ExchangeRates */ = {
+			isa = PBXGroup;
+			children = (
+				C9D728D21C00762400D7D6AD /* Model */,
+				C9D728991C00708D00D7D6AD /* AppDelegate.swift */,
+				C9D7289B1C00708D00D7D6AD /* ViewController.swift */,
+				C9D7289D1C00708D00D7D6AD /* Main.storyboard */,
+				C9D728A01C00708D00D7D6AD /* Assets.xcassets */,
+				C9D728A21C00708D00D7D6AD /* LaunchScreen.storyboard */,
+				C9D728A51C00708D00D7D6AD /* Info.plist */,
+			);
+			path = ExchangeRates;
+			sourceTree = "<group>";
+		};
+		C9D728AD1C00708D00D7D6AD /* ExchangeRatesTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9D728AE1C00708D00D7D6AD /* ExchangeRatesTests.swift */,
+				C9D728B01C00708D00D7D6AD /* Info.plist */,
+			);
+			path = ExchangeRatesTests;
+			sourceTree = "<group>";
+		};
+		C9D728B81C00708D00D7D6AD /* ExchangeRatesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C9D728B91C00708D00D7D6AD /* ExchangeRatesUITests.swift */,
+				C9D728BB1C00708D00D7D6AD /* Info.plist */,
+			);
+			path = ExchangeRatesUITests;
+			sourceTree = "<group>";
+		};
+		C9D728C71C0070C800D7D6AD /* 3rd party */ = {
+			isa = PBXGroup;
+			children = (
+				C9D729221C00C62000D7D6AD /* DateTime */,
+				C9D729211C00C61200D7D6AD /* JBBar */,
+				C9D728C81C0070E200D7D6AD /* ExchangeRates-Bridging-Header.h */,
+			);
+			name = "3rd party";
+			sourceTree = "<group>";
+		};
+		C9D728D21C00762400D7D6AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9D728D31C00781200D7D6AD /* Rates.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C9D728DC1C00AF0D00D7D6AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9D728DD1C00AF0D00D7D6AD /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9D728DF1C00AF0D00D7D6AD /* ExchangeRates Widget */ = {
+			isa = PBXGroup;
+			children = (
+				C9D728E01C00AF0D00D7D6AD /* TodayViewController.swift */,
+				C9D728E21C00AF0D00D7D6AD /* MainInterface.storyboard */,
+				C9D728E51C00AF0D00D7D6AD /* Info.plist */,
+			);
+			path = "ExchangeRates Widget";
+			sourceTree = "<group>";
+		};
+		C9D729211C00C61200D7D6AD /* JBBar */ = {
+			isa = PBXGroup;
+			children = (
+				C9D728C91C0070E300D7D6AD /* JBBarChartView.h */,
+				C9D728CA1C0070E300D7D6AD /* JBBarChartView.m */,
+				C9D728CB1C0070E300D7D6AD /* JBChartView.h */,
+				C9D728CC1C0070E300D7D6AD /* JBChartView.m */,
+				C9D728CD1C0070E300D7D6AD /* JBLineChartView.h */,
+				C9D728CE1C0070E300D7D6AD /* JBLineChartView.m */,
+			);
+			name = JBBar;
+			sourceTree = "<group>";
+		};
+		C9D729221C00C62000D7D6AD /* DateTime */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DateTime;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9D728951C00708D00D7D6AD /* ExchangeRates */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9D728BE1C00708D00D7D6AD /* Build configuration list for PBXNativeTarget "ExchangeRates" */;
+			buildPhases = (
+				C9D728921C00708D00D7D6AD /* Sources */,
+				C9D728931C00708D00D7D6AD /* Frameworks */,
+				C9D728941C00708D00D7D6AD /* Resources */,
+				C9D728EC1C00AF0D00D7D6AD /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9D728E71C00AF0D00D7D6AD /* PBXTargetDependency */,
+			);
+			name = ExchangeRates;
+			productName = ExchangeRates;
+			productReference = C9D728961C00708D00D7D6AD /* ExchangeRates.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9D728A91C00708D00D7D6AD /* ExchangeRatesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9D728C11C00708D00D7D6AD /* Build configuration list for PBXNativeTarget "ExchangeRatesTests" */;
+			buildPhases = (
+				C9D728A61C00708D00D7D6AD /* Sources */,
+				C9D728A71C00708D00D7D6AD /* Frameworks */,
+				C9D728A81C00708D00D7D6AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9D728AC1C00708D00D7D6AD /* PBXTargetDependency */,
+			);
+			name = ExchangeRatesTests;
+			productName = ExchangeRatesTests;
+			productReference = C9D728AA1C00708D00D7D6AD /* ExchangeRatesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C9D728B41C00708D00D7D6AD /* ExchangeRatesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9D728C41C00708D00D7D6AD /* Build configuration list for PBXNativeTarget "ExchangeRatesUITests" */;
+			buildPhases = (
+				C9D728B11C00708D00D7D6AD /* Sources */,
+				C9D728B21C00708D00D7D6AD /* Frameworks */,
+				C9D728B31C00708D00D7D6AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9D728B71C00708D00D7D6AD /* PBXTargetDependency */,
+			);
+			name = ExchangeRatesUITests;
+			productName = ExchangeRatesUITests;
+			productReference = C9D728B51C00708D00D7D6AD /* ExchangeRatesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C9D728DA1C00AF0D00D7D6AD /* ExchangeRates Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9D728E91C00AF0D00D7D6AD /* Build configuration list for PBXNativeTarget "ExchangeRates Widget" */;
+			buildPhases = (
+				C9D728D71C00AF0D00D7D6AD /* Sources */,
+				C9D728D81C00AF0D00D7D6AD /* Frameworks */,
+				C9D728D91C00AF0D00D7D6AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ExchangeRates Widget";
+			productName = "ExchangeRates Widget";
+			productReference = C9D728DB1C00AF0D00D7D6AD /* ExchangeRates Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9D7288E1C00708D00D7D6AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Oszi;
+				TargetAttributes = {
+					C9D728951C00708D00D7D6AD = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					C9D728A91C00708D00D7D6AD = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = C9D728951C00708D00D7D6AD;
+					};
+					C9D728B41C00708D00D7D6AD = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = C9D728951C00708D00D7D6AD;
+					};
+					C9D728DA1C00AF0D00D7D6AD = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = C9D728911C00708D00D7D6AD /* Build configuration list for PBXProject "ExchangeRates" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9D7288D1C00708D00D7D6AD;
+			productRefGroup = C9D728971C00708D00D7D6AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9D728951C00708D00D7D6AD /* ExchangeRates */,
+				C9D728A91C00708D00D7D6AD /* ExchangeRatesTests */,
+				C9D728B41C00708D00D7D6AD /* ExchangeRatesUITests */,
+				C9D728DA1C00AF0D00D7D6AD /* ExchangeRates Widget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9D728941C00708D00D7D6AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9D728A41C00708D00D7D6AD /* LaunchScreen.storyboard in Resources */,
+				C9D728A11C00708D00D7D6AD /* Assets.xcassets in Resources */,
+				C9D7289F1C00708D00D7D6AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D728A81C00708D00D7D6AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D728B31C00708D00D7D6AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D728D91C00AF0D00D7D6AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9D728E41C00AF0D00D7D6AD /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9D728921C00708D00D7D6AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9D728D41C00781200D7D6AD /* Rates.swift in Sources */,
+				C9D728D11C0070E300D7D6AD /* JBLineChartView.m in Sources */,
+				C9D728CF1C0070E300D7D6AD /* JBBarChartView.m in Sources */,
+				C9D728D01C0070E300D7D6AD /* JBChartView.m in Sources */,
+				C9D7289C1C00708D00D7D6AD /* ViewController.swift in Sources */,
+				C9D7289A1C00708D00D7D6AD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D728A61C00708D00D7D6AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9D728AF1C00708D00D7D6AD /* ExchangeRatesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D728B11C00708D00D7D6AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9D728BA1C00708D00D7D6AD /* ExchangeRatesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D728D71C00AF0D00D7D6AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9D728F41C00BFF100D7D6AD /* Rates.swift in Sources */,
+				C9D728ED1C00B39A00D7D6AD /* JBBarChartView.h in Sources */,
+				C9D728EE1C00B39A00D7D6AD /* JBBarChartView.m in Sources */,
+				C9D728EF1C00B39A00D7D6AD /* JBChartView.h in Sources */,
+				C9D728F01C00B39A00D7D6AD /* JBChartView.m in Sources */,
+				C9D728F11C00B39A00D7D6AD /* JBLineChartView.h in Sources */,
+				C9D728F21C00B39B00D7D6AD /* JBLineChartView.m in Sources */,
+				C9D728F31C00B39B00D7D6AD /* ExchangeRates-Bridging-Header.h in Sources */,
+				C9D728E11C00AF0D00D7D6AD /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9D728AC1C00708D00D7D6AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9D728951C00708D00D7D6AD /* ExchangeRates */;
+			targetProxy = C9D728AB1C00708D00D7D6AD /* PBXContainerItemProxy */;
+		};
+		C9D728B71C00708D00D7D6AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9D728951C00708D00D7D6AD /* ExchangeRates */;
+			targetProxy = C9D728B61C00708D00D7D6AD /* PBXContainerItemProxy */;
+		};
+		C9D728E71C00AF0D00D7D6AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9D728DA1C00AF0D00D7D6AD /* ExchangeRates Widget */;
+			targetProxy = C9D728E61C00AF0D00D7D6AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C9D7289D1C00708D00D7D6AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9D7289E1C00708D00D7D6AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C9D728A21C00708D00D7D6AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9D728A31C00708D00D7D6AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C9D728E21C00AF0D00D7D6AD /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9D728E31C00AF0D00D7D6AD /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9D728BC1C00708D00D7D6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9D728BD1C00708D00D7D6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9D728BF1C00708D00D7D6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = ExchangeRates/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.tamasoszko.ExchangeRates;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeRates-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9D728C01C00708D00D7D6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = ExchangeRates/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.tamasoszko.ExchangeRates;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeRates-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		C9D728C21C00708D00D7D6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ExchangeRatesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.tamasoszko.ExchangeRatesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExchangeRates.app/ExchangeRates";
+			};
+			name = Debug;
+		};
+		C9D728C31C00708D00D7D6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ExchangeRatesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.tamasoszko.ExchangeRatesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExchangeRates.app/ExchangeRates";
+			};
+			name = Release;
+		};
+		C9D728C51C00708D00D7D6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ExchangeRatesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.tamasoszko.ExchangeRatesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ExchangeRates;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C9D728C61C00708D00D7D6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ExchangeRatesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.tamasoszko.ExchangeRatesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ExchangeRates;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		C9D728EA1C00AF0D00D7D6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "ExchangeRates Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.tamasoszko.ExchangeRates.ExchangeRates-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeRates-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		C9D728EB1C00AF0D00D7D6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "ExchangeRates Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.tamasoszko.ExchangeRates.ExchangeRates-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeRates-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9D728911C00708D00D7D6AD /* Build configuration list for PBXProject "ExchangeRates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D728BC1C00708D00D7D6AD /* Debug */,
+				C9D728BD1C00708D00D7D6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9D728BE1C00708D00D7D6AD /* Build configuration list for PBXNativeTarget "ExchangeRates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D728BF1C00708D00D7D6AD /* Debug */,
+				C9D728C01C00708D00D7D6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C9D728C11C00708D00D7D6AD /* Build configuration list for PBXNativeTarget "ExchangeRatesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D728C21C00708D00D7D6AD /* Debug */,
+				C9D728C31C00708D00D7D6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C9D728C41C00708D00D7D6AD /* Build configuration list for PBXNativeTarget "ExchangeRatesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D728C51C00708D00D7D6AD /* Debug */,
+				C9D728C61C00708D00D7D6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C9D728E91C00AF0D00D7D6AD /* Build configuration list for PBXNativeTarget "ExchangeRates Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D728EA1C00AF0D00D7D6AD /* Debug */,
+				C9D728EB1C00AF0D00D7D6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9D7288E1C00708D00D7D6AD /* Project object */;
+}
