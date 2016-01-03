@@ -33,7 +33,7 @@ class SecurityView : NSObject, ISecurityView {
     
     func requestPasswordUser(title: String, message: String, completion: (Bool, String?) -> Void) {
         
-        var alertViewController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alertViewController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         self.alertViewController = alertViewController
         alertViewController.addTextFieldWithConfigurationHandler({ (textField: UITextField!) -> Void in
             textField.placeholder = "Password"
@@ -44,9 +44,9 @@ class SecurityView : NSObject, ISecurityView {
             completion(false, nil)
         })
         let okButton = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
-            if let textField = alertViewController.textFields?.first as? UITextField {
-                if count(textField.text) > 0 {
-                    completion(true, textField.text)
+            if let text = alertViewController.textFields?.first?.text {
+                if text.characters.count > 0 {
+                    completion(true, text)
                 } else {
                     completion(false, nil)
                 }

@@ -45,8 +45,8 @@ class WebViewController: UIViewController, UIWebViewDelegate, WebView {
         self.delegate.webViewDidFinishLoading(self)
     }
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
-        self.delegate.webView(self, didFailLoading: error)
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        self.delegate.webView(self, didFailLoading: error!)
     }
     
 //    func isLoginPage() -> Bool {
@@ -73,14 +73,15 @@ class WebViewController: UIViewController, UIWebViewDelegate, WebView {
     }
     
     @IBAction func homeButtonTapped(sender: AnyObject) {
-        self.controller.loadLoginPage()
+        self.controller.logout { () -> Void in
+            self.controller.loadLoginPage()
+        }
     }
-    
     
     func fillAccountNumber(accountNumber: NSString) {
         dispatch_async(dispatch_get_main_queue()) {
             let ret = self.webView.stringByEvaluatingJavaScriptFromString("document.getElementById('hb_szamlaszam').value='\(accountNumber)'")
-            println("JS returned=\(ret)")
+            print("JS returned=\(ret)")
         }
     }
     
@@ -125,6 +126,9 @@ class WebViewController: UIViewController, UIWebViewDelegate, WebView {
     }
     
     func showError(error: NSError) {
+        guard error.code != NSURLError.Cancelled.rawValue else {
+            return
+        }
         UIAlertView(title: error.localizedDescription, message: error.localizedRecoverySuggestion, delegate: nil, cancelButtonTitle: "OK").show()
     }
     

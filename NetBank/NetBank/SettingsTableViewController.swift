@@ -34,7 +34,7 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewCellD
         self.controller.getSettings()
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -49,34 +49,34 @@ class SettingsTableViewController: UITableViewController, SettingsTableViewCellD
     
     func setupSettingFromCells() {
         if let loginPage = self.textFields[NSIndexPath(forRow: 0, inSection: 0)] {
-            self.setting?.loginPage = loginPage.text
+            self.setting?.loginPage = loginPage.text!
         }
         if let homeBankId = self.textFields[NSIndexPath(forRow: 0, inSection: 1)] {
-            self.setting?.homeBankId.value = homeBankId.text
+            self.setting?.homeBankId.value = homeBankId.text!
         }
         if let accountNumber = self.textFields[NSIndexPath(forRow: 1, inSection: 1)] {
-            self.setting?.accountNumber.value = accountNumber.text
+            self.setting?.accountNumber.value = accountNumber.text!
         }
         if let password = self.textFields[NSIndexPath(forRow: 2, inSection: 1)] {
-            self.setting?.password.value = password.text
+            self.setting?.password.value = password.text!
         }
         if let homeBankTagId = self.textFields[NSIndexPath(forRow: 0, inSection: 2)] {
-            self.setting?.homeBankId.elementValue = homeBankTagId.text
+            self.setting?.homeBankId.elementValue = homeBankTagId.text!
         }
         if let accountTagId = self.textFields[NSIndexPath(forRow: 1, inSection: 2)] {
-            self.setting?.accountNumber.elementValue = accountTagId.text
+            self.setting?.accountNumber.elementValue = accountTagId.text!
         }
         if let passwordTagId = self.textFields[NSIndexPath(forRow: 2, inSection: 2)] {
-            self.setting?.password.elementValue = passwordTagId.text
+            self.setting?.password.elementValue = passwordTagId.text!
         }
         if let loginButtonTagId = self.textFields[NSIndexPath(forRow: 3, inSection: 2)] {
-            self.setting?.loginButton.elementValue = loginButtonTagId.text
+            self.setting?.loginButton.elementValue = loginButtonTagId.text!
         }
     }
     
     // MARK: - SettingsView
     override func refresh() {
-        if let settings = self.controller.settings, let first = self.controller.settings!.first {
+        if let _ = self.controller.settings, let first = self.controller.settings!.first {
             self.setting = Setting.settingFromDao(first)
         } else {
             self.setting = Setting()

@@ -31,8 +31,8 @@ protocol ISettingsCryptor : NSObjectProtocol {
 private class SettingsFilePersistency: NSObject, ISettingsPersistency {
     
     private func absolutePathWithName(name: String) -> String {
-        let path = FileUtils.documentsDirectory().stringByAppendingPathComponent("settings").stringByAppendingPathComponent(name)
-        println(path)
+        let path = FileUtils.documentsDirectory() + "/settings/\(name)"
+        print(path)
         return path
     }
     
@@ -40,19 +40,18 @@ private class SettingsFilePersistency: NSObject, ISettingsPersistency {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
 
             var daos : [SettingsDao] = []
-            var error: NSError?
 
             if NSFileManager.defaultManager().fileExistsAtPath(self.absolutePathWithName("/")) {
-                let fileNames = NSFileManager.defaultManager().contentsOfDirectoryAtPath(self.absolutePathWithName("/"), error: &error) as! [String]?
-                if error == nil {
-                    println("\(fileNames)")
+                do {
+                    let fileNames = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(self.absolutePathWithName("/")) as [String]?
+                    print("\(fileNames)")
                     for fileName in fileNames! {
                         if let dao = NSKeyedUnarchiver.unarchiveObjectWithFile(self.absolutePathWithName(fileName)) as! SettingsDao? {
                             daos.append(dao)
                         }
                     }
                     completion(daos, nil)
-                } else {
+                } catch let error as NSError {
                     completion(nil, error)
                 }
             } else {
@@ -63,19 +62,17 @@ private class SettingsFilePersistency: NSObject, ISettingsPersistency {
 
     func update(dao: SettingsDao, completion: (NSError?) -> Void) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            println("update: id=\(dao.id.UUIDString), dao=\(dao)")
-
-            var error: NSError?
-            if NSFileManager.defaultManager().createDirectoryAtPath(self.absolutePathWithName("/"), withIntermediateDirectories: true, attributes: nil, error: &error) {
+            print("update: id=\(dao.id.UUIDString), dao=\(dao)")
+            do {
+                try NSFileManager.defaultManager().createDirectoryAtPath(self.absolutePathWithName(self.absolutePathWithName("/")), withIntermediateDirectories: true, attributes: nil)
                 if NSKeyedArchiver.archiveRootObject(dao, toFile: self.absolutePathWithName(dao.id.UUIDString)) {
                     completion(nil)
                 } else {
                     completion(NSError(domain: NSStringFromClass(SettingsFilePersistency), code: 1, userInfo: nil))
                 }
-            } else {
+            } catch let error as NSError {
                 completion(error)
             }
-            
         }
     }
 }
@@ -127,13 +124,13 @@ private class SettingsCryptor : NSObject, ISettingsCryptor {
     }
     
     private func encrypt(string: String) -> String {
-        let enc = Crypto.encryptData(string.dataUsingEncoding(NSUTF8StringEncoding), withKey: self.key).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(0))
+        let enc = Crypto.encryptData(string.dataUsingEncoding(NSUTF8StringEncoding), withKey: self.key).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
 //        println("encrypt: in=\(string), out=\(enc)")
         return enc
     }
     
     private func decrypt(string: String) -> String {
-        let plain = NSString(data: Crypto.decryptData(NSData(base64EncodedString: string, options: NSDataBase64DecodingOptions(0)), withKey: self.key), encoding: NSUTF8StringEncoding) as! String
+        let plain = NSString(data: Crypto.decryptData(NSData(base64EncodedString: string, options: NSDataBase64DecodingOptions(rawValue: 0)), withKey: self.key), encoding: NSUTF8StringEncoding) as! String
 //        println("decrypt: in=\(string), out=\(plain)")
         return plain
     }

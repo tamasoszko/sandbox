@@ -13,7 +13,7 @@ protocol WebController : NSObjectProtocol {
     var lastError: NSError? { get }
     var lastRequest: NSURLRequest? { get }
     func loadLoginPage()
-    func logout()
+    func logout(completion: (()->Void)?)
 }
 
 class WebControllerImpl: NSObject, WebViewDelegate, WebController {
@@ -45,13 +45,17 @@ class WebControllerImpl: NSObject, WebViewDelegate, WebController {
         })
     }
     
-    func logout() {
+    func logout(completion: (()->Void)?) {
         if let setting = self.setting {
             if let url = NSURL(string: "/portal/hu/OTPdirekt/Kilepes", relativeToURL: NSURL(string:setting.loginPage)) {
-                println("url=\(url.absoluteString)")
+                print("url=\(url.absoluteString)")
                 self.view.load(url)
             }
         }
+        guard let completion = completion else {
+            return
+        }
+        completion()
     }
     
     // MARK: - WebViewDelegate
@@ -75,9 +79,13 @@ class WebControllerImpl: NSObject, WebViewDelegate, WebController {
             self.securityController.authenticateUser("", completion: { (success: Bool, error: NSError?) -> Void in
                 if success  {
                     self.securityController.requestPasswordUser("", message: "Enter homebank password to log in", completion: { (success: Bool, password: String?) -> Void in
-                        if success && password != nil && count(password!) > 0 {
+                        if success && password != nil && password!.characters.count > 0 {
                             if self.fillForm(self.setting.password.elementValue, value: password!) {
-                                self.fillLoginForm()
+                                guard self.fillLoginForm() else {
+                                    let error = NSError(domain: "Failed to fill login form", code: 1, userInfo: nil)
+                                    self.view.showError(error)
+                                    return
+                                }
                                 self.submitForm()
                             }
                         }
@@ -116,25 +124,27 @@ class WebControllerImpl: NSObject, WebViewDelegate, WebController {
     }
 
     func fillLoginForm() -> Bool {
-        if fillForm(self.setting.accountNumber.elementValue, value: self.setting.accountNumber.value) {
-            if fillForm(self.setting.homeBankId.elementValue, value: self.setting.homeBankId.value) {
-                return true
-            }
+        guard fillForm(self.setting.accountNumber.elementValue, value: self.setting.accountNumber.value) else {
+            return false
         }
-        return false
+        return fillForm(self.setting.homeBankId.elementValue, value: self.setting.homeBankId.value)
     }
     
     func fillForm(id: String, value: String) -> Bool {
-        let hbIdRes = self.view.executeJavaSrcipt("document.getElementById('\(id)').value='\(value)'")
-        return hbIdRes == value ? true : false
+        let js = "document.getElementById('\(id)').value='\(value)'"
+        let hbIdRes = self.view.executeJavaSrcipt(js)
+        let success = hbIdRes == value ? true : false
+        print("fillForm(\(id)) = \(success)")
+        return success
     }
     
     func submitForm() {
         if TARGET_IPHONE_SIMULATOR == 1 {
-            println("skipping login")
+            print("skipping login")
         } else {
-            let hbIdRes = self.view.executeJavaSrcipt("document.getElementsByName('\(self.setting.loginButton.elementValue)')[0].click()")
-            println("hbIdRes=\(hbIdRes)")
+            let js = "document.getElementsByName('\(self.setting.loginButton.elementValue)')[0].click()"
+            let hbIdRes = self.view.executeJavaSrcipt(js)
+            print("\(js) = \(hbIdRes)")
         }
     }
 }

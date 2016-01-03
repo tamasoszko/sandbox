@@ -44,6 +44,10 @@ class SecurityController : NSObject {
         self.view.reset()
     }
     
+    func clearAuthentication() {
+        self.authenticated = false
+    }
+    
     func isAuthenticated() -> Bool {
         return self.authenticated
     }
@@ -61,7 +65,7 @@ class SecurityController : NSObject {
             if TouchID.touchIdAvailable() {
                 TouchID.evaluateTouchIdWithDescription("Authenticate yourself to access settings", completion: { (success: Bool, error: NSError!) -> Void in
                     if success {
-                        println("user authenticated")
+                        print("user authenticated")
                         self.authenticated = true
                         completion(true, nil)
                     } else {
@@ -70,10 +74,10 @@ class SecurityController : NSObject {
                             if let errorCode = LAError(rawValue: error.code) {
                                 switch errorCode {
                                 case .AuthenticationFailed:
-                                    println("authentication failed!")
+                                    print("authentication failed!")
                                     retError = Error.AuthenticationFailed
                                 default:
-                                    println("authentication error: \(error)")
+                                    print("authentication error: \(error)")
                                 }
                             }
                         }
@@ -88,18 +92,18 @@ class SecurityController : NSObject {
     
     func getCredential(user: String, completion: (Credential?, NSError?) -> Void) {
         
-        var readCredential = { (completion: (Credential?, NSError?) -> Void) -> Void in
+        let readCredential = { (completion: (Credential?, NSError?) -> Void) -> Void in
 //            self.keyChain.deleteData()
-            var key = self.keyChain.loadData()
-            if count(key) == 0 {
+            let key = self.keyChain.loadData()
+            if key.characters.count == 0 {
                 if let newKey = Crypto.generateRandomBytes(Crypto.keyLengthAes256()) {
-                    self.keyChain.saveData(newKey.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(0)))
+                    self.keyChain.saveData(newKey.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0)))
                     completion(Credential(userName: user, encryptionKey: newKey), nil)
                 } else {
                     assertionFailure("key generation failed")
                 }
             } else {
-                completion(Credential(userName: user, encryptionKey: NSData(base64EncodedString: key, options: NSDataBase64DecodingOptions(0))!), nil)
+                completion(Credential(userName: user, encryptionKey: NSData(base64EncodedString: key, options: NSDataBase64DecodingOptions(rawValue: 0))!), nil)
             }
         }
     

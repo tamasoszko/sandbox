@@ -11,7 +11,7 @@ import UIKit
 class FileUtils: NSObject {
 
     class func documentsDirectory() -> String {
-        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first as! String
+        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
         return path
     }
 }

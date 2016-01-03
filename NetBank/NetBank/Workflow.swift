@@ -26,10 +26,15 @@ class Workflow: NSObject {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        if let webController = self.webController {
-            webController.logout()
+        guard let webController = self.webController else {
+            return
         }
         self.securityController?.reset()
+        self.securityController?.authenticateUser("", completion: { (success: Bool, error: NSError?) -> Void in
+            if !success {
+                webController.logout(nil)
+            }
+        })
     }
     
     func startWebView() {
