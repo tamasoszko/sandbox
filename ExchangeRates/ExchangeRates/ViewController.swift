@@ -19,7 +19,7 @@ class ViewController: UIViewController, JBLineChartViewDataSource, JBLineChartVi
     
     var ratesDownloader: RatesDownloader?
     var rates: [Rate]?
-    let color = UIColor(red: 23/255, green: 109/255, blue: 250/255, alpha: 1)
+    private let color = UIColor(red: 23/255, green: 109/255, blue: 250/255, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,24 +109,27 @@ class ViewController: UIViewController, JBLineChartViewDataSource, JBLineChartVi
             self.rates = rates
             self.chartView.reloadData()
             
-            let lastRate = rates![0]
+            guard let lastRate = rates?[0], let last2Rate = rates?[1] else {
+                self.rateLabel.text = "-"
+                self.changeLabel.textColor = self.color
+                self.changeLabel.text = "0.0"
+                return
+            }
+            let chg = lastRate.value.floatValue - last2Rate.value.floatValue
             self.rateLabel.text = "\(lastRate.value)\(lastRate.currencyTo)"
-            if rates?.count > 1, let last2Rate = rates?[1] {
-                let chg = lastRate.value.floatValue - last2Rate.value.floatValue
-                if chg < 0 {
-                    self.changeLabel.textColor = UIColor.redColor()
-                    self.changeLabel.text = "\(chg)"
-                } else if chg > 0 {
-                    self.changeLabel.textColor = UIColor.greenColor()
-                    self.changeLabel.text = "+\(chg)"
-                } else {
-                    self.changeLabel.textColor = self.color
-                    self.changeLabel.text = "0.0"
-                }
+            if chg > 0 {
+                self.changeLabel.textColor = UIColor.redColor()
+                self.changeLabel.text = "\(chg)"
+            } else if chg < 0 {
+                self.changeLabel.textColor = UIColor.greenColor()
+                self.changeLabel.text = "+\(chg)"
+            } else {
+                self.changeLabel.textColor = self.color
+                self.changeLabel.text = "0.0"
             }
         })
     }
-    
+
     private func createRatesDownloader() -> RatesDownloader {
 
         let currency = segmentedControl.titleForSegmentAtIndex(segmentedControl.selectedSegmentIndex)

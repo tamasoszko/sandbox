@@ -81,11 +81,17 @@ class MNBRatesDownloader : RatesDownloader {
     func getRates(completion:([Rate]?, NSDate?, NSError?)->()) {
         
         let res = loadFromCache(cacheMaxAge)
+        
         if let data = res.data, let lastModified = res.lastModified {
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                completion(self.parse(data), lastModified, nil)
-            })
-            return
+            let rates = self.parse(data)
+            if rates.count > 0 {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    completion(rates, lastModified, nil)
+                })
+                return
+            } else {
+                invalidateCache()
+            }
         }
         let session = NSURLSession.sharedSession()
         let url = getUrl()
@@ -120,12 +126,20 @@ class MNBRatesDownloader : RatesDownloader {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
+    private func invalidateCache() {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(lastModifiedKey)
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(ratesKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
     private func getUrl() -> NSURL {
         
         let to = NSDate()
         let from = NSDate(timeIntervalSinceNow: -3600 * 24 * 90)
         let df = NSDateFormatter()
-        df.dateFormat = "YYYY.MM.dd"
+        df.dateFormat = "yyyy.MM.dd"
+//        print("to=\(df.stringFromDate(to))")
+//        print("from=\(df.stringFromDate(from))")
         
         let urlStr = "https://www.mnb.hu/arfolyam-tablazat?deviza=rbCurrencySelect&devizaSelected=\(currency)&datefrom=\(df.stringFromDate(from)).&datetill=\(df.stringFromDate(to)).&order=0"
         return NSURL(string: urlStr)!
@@ -152,7 +166,7 @@ class MNBRatesDownloader : RatesDownloader {
                 && matchRate.numberOfRanges == 2 else {
                     continue
             }
-            let dateStr = nsString.substringWithRange(matchDate.rangeAtIndex(1))
+            _ = nsString.substringWithRange(matchDate.rangeAtIndex(1))
             let rateStr = nsString.substringWithRange(matchRate.rangeAtIndex(1)).stringByReplacingOccurrencesOfString(",", withString: ".")
             let rate = Rate(currencyFrom: currency, currencyTo: "HUF", value: nf.numberFromString(rateStr)!, date: NSDate(timeIntervalSinceNow: -3600 * 24 * Double(i)))
             items.append(rate)
